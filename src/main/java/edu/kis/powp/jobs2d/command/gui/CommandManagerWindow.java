@@ -94,7 +94,7 @@ public class CommandManagerWindow extends JFrame implements WindowComponent {
 
     public void updateCurrentCommandStatsField(){
         currentCommandStatsField.setText("Command stats:\n");
-        currentCommandStatsField.append("Operations count: XX\n");
+        currentCommandStatsField.append("Operations count: " + commandManager.getCountingVisitor().getCompoundCommandsCount() +"\n");
         currentCommandStatsField.append("Operations length: XX\n");
         currentCommandStatsField.append("OperateTo length: XX\n");
         currentCommandStatsField.append("Operation time: XXs\n");
