@@ -19,6 +19,7 @@ public class CommandManagerWindow extends JFrame implements WindowComponent {
     private CommandManager commandManager;
 
     private JTextArea currentCommandField;
+    private JTextArea currentCommandStatsField;
 
     private String observerListString;
     private JTextArea observerListField;
@@ -54,6 +55,15 @@ public class CommandManagerWindow extends JFrame implements WindowComponent {
         c.gridx = 0;
         c.weighty = 1;
         content.add(currentCommandField, c);
+        updateCurrentCommandField();
+
+        currentCommandStatsField = new JTextArea("PLACEHOLDER");
+        currentCommandStatsField.setEditable(false);
+        c.fill = GridBagConstraints.BOTH;
+        c.weightx = 1;
+        c.gridx = 0;
+        c.weighty = 1;
+        content.add(currentCommandStatsField, c);
         updateCurrentCommandField();
 
         JButton btnClearCommand = new JButton("Clear command");
