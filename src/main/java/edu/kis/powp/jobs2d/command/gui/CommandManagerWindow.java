@@ -64,7 +64,7 @@ public class CommandManagerWindow extends JFrame implements WindowComponent {
         c.gridx = 0;
         c.weighty = 1;
         content.add(currentCommandStatsField, c);
-        updateCurrentCommandField();
+        updateCurrentCommandStatsField();
 
         JButton btnClearCommand = new JButton("Clear command");
         btnClearCommand.addActionListener((ActionEvent e) -> this.clearCommand());
@@ -90,6 +90,14 @@ public class CommandManagerWindow extends JFrame implements WindowComponent {
 
     public void updateCurrentCommandField() {
         currentCommandField.setText(commandManager.getCurrentCommandString());
+    }
+
+    public void updateCurrentCommandStatsField(){
+        currentCommandStatsField.setText("Command stats:\n");
+        currentCommandStatsField.append("Operations count: XX\n");
+        currentCommandStatsField.append("Operations length: XX\n");
+        currentCommandStatsField.append("OperateTo length: XX\n");
+        currentCommandStatsField.append("Operation time: XXs\n");
     }
 
     public void deleteObservers() {
