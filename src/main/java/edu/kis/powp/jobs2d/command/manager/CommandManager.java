@@ -37,12 +37,15 @@ public class CommandManager {
      * @param name        name of the command.
      */
     public synchronized void setCurrentCommand(List<DriverCommand> commandList, String name) {
+
         setCurrentCommand(new ICompoundCommand() {
             List<DriverCommand> driverCommands = commandList;
 
             @Override
             public void execute(Job2dDriver driver) {
-                driverCommands.forEach((c) -> c.execute(driver));
+                //driverCommands.forEach((c) -> c.execute(driver));
+                DrawingThread thread = new DrawingThread(commandList, driver);
+                thread.start();
             }
 
             @Override

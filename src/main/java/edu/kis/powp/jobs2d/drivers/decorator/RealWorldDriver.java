@@ -29,7 +29,7 @@ public class RealWorldDriver extends DriverDecorator{
     public RealWorldDriver(Job2dDriver driver, double operateToSpeed){
         super(driver);
         this.operateToSpeed = operateToSpeed;
-        this.setPositionSpeed = 0.5 * operateToSpeed;
+        this.setPositionSpeed = 3 * operateToSpeed;
         this.operateToSetDelay = 1.0;
         this.setToOperateDelay = 1.0;
     }
@@ -74,7 +74,7 @@ public class RealWorldDriver extends DriverDecorator{
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Diver simulating real world time";
     }
 
     private ArrayList<Double> calculateDelays(int destinationX, int destinationY) {
