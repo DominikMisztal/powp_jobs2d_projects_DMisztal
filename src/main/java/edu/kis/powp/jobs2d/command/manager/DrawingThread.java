@@ -5,7 +5,7 @@ import edu.kis.powp.jobs2d.command.DriverCommand;
 
 import java.util.List;
 
-public class DrawingThread extends Thread{
+public class DrawingThread implements Runnable{
     private final List<DriverCommand> commands;
     private final Job2dDriver driver;
     public DrawingThread(List<DriverCommand> commands, Job2dDriver driver){
